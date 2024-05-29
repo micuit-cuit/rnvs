@@ -1,0 +1,85 @@
+:root{
+    background-color: transparent;
+    --transition: 0.5s;
+}
+body{
+    background-color:transparent;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+}
+
+#app{
+    height: 100vh;
+    width: 100vw;
+    background-color: tomato;
+    transition: var(--transition);
+}
+#config{
+    height: 100vh;
+    width: 15vw;
+    background-color: #343434    ;
+    position: absolute;
+    right: -15vw;
+    transition: var(--transition);
+
+}
+body.config-open #app{
+    width: 85vw;
+}
+body.config-open #config{
+    right: 0;
+}
+
+
+
+#buttonBar{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -50px;
+    right: 0;
+    height: 50px;
+    transition: var(--transition);
+}
+body.config-open #buttonBar{
+    right: 15vw;
+}
+
+#buttonBar div{
+    background-color: white;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 50%;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0px 0px rgb(133, 133, 133);
+    transition: var(--transition);
+}
+#buttonBar div svg{
+    transition: var(--transition);
+}
+
+#buttonBar div:hover{
+    box-shadow: 0px 0px 0px 0px;
+    transform: translate(3px, 3px);
+}
+#buttonBar div:hover svg{
+    transform: rotate(360deg);
+}
+body:hover #buttonBar{
+    top: 0;
+}
+
+
+
+
+
