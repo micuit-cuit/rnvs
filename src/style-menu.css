@@ -1,0 +1,212 @@
+.menu-item {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: white;
+}
+
+.menu-item.submenu .submenu-title {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+}
+
+.menu-item.submenu .submenu-title svg {
+    margin: 20px;
+    transform: rotate(-90deg);
+    transition: var(--transition);
+}
+
+.menu-item.submenu input[type="checkbox"] {
+    display: none;
+}
+
+.menu-item.submenu input[type="checkbox"]:checked+.submenu-title svg {
+    transform: rotate(0deg);
+}
+
+.menu-item.submenu .submenu-content {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-height: 0;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
+}
+
+.menu-item.submenu input[type="checkbox"]:checked+.submenu-title+.submenu-content {
+    opacity: 1;
+    max-height: 100vh;
+    transition: max-height 0.25s ease-in;
+}
+
+
+button.menu-item {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
+    padding: 5px;
+    border: black 1px solid;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+label.menu-item {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.div-content.menu-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+h1.menu-item {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2em;
+    padding: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+
+
+input.menu-item {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
+    padding: 5px;
+    border: black 1px solid;
+    border-radius: 1em;
+    max-width: 30%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+input.menu-item[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+}
+
+input.menu-item[type=range]:focus {
+    outline: none;
+}
+
+input.menu-item[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000;
+    background: #fdffff;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+input.menu-item[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 20px;
+    width: 10px;
+    border-radius: 6px;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6px;
+}
+
+input.menu-item[type=range]:focus::-webkit-slider-runnable-track {
+    background: #fdffff;
+}
+
+input.menu-item[type=range]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000;
+    background: #fdffff;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+input.menu-item[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 40px;
+    width: 20px;
+    border-radius: 6px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+input.menu-item[type=range]::-ms-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input.menu-item[type=range]::-ms-fill-lower {
+    background: #fdffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #000000;
+}
+
+input.menu-item[type=range]::-ms-fill-upper {
+    background: #fdffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #000000;
+}
+
+input.menu-item[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 40px;
+    width: 20px;
+    border-radius: 6px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+input.menu-item[type=range]:focus::-ms-fill-lower {
+    background: #fdffff;
+}
+
+input.menu-item[type=range]:focus::-ms-fill-upper {
+    background: #fdffff;
+}
