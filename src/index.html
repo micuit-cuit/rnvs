@@ -5,22 +5,174 @@
     <meta name="viewport" content="width=1920, initial-scale=1.0">
     <title>rnvs</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-menu.css">
+    <link rel="icon" type="image/png" href="icone.png">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/menu-setting/confgToPicture.js"></script>
+    <script src="js/menu-setting/menuPrincipal.js"></script>
 
 </head>
 <body>
     <div id="app"></div>
     <dib id="buttonBar">
-        <div id="button-configToPictur"><i data-lucide="picture-in-picture-2"></i></div>
+        <div id="button-configToPictur" onclick="configTopicture()"  ><i data-lucide="picture-in-picture-2"></i></div>
         <div id="button-config" onclick="document.body.classList.toggle('config-open');"><i data-lucide="cog"></i></div>
     </dib>
     <div id="config">
+        <div id="config-drag"></div>
         <div id="content">
 
         </div>
     </div>
     <script>
+        const content = document.getElementById('content');
+        const menu = [
+        {
+                "type":"h1",
+                "text":"demo parametre h1 test"
+            },
+            {
+                "type":"h2",
+                "text":"demo parametre h2 test"
+            },
+            {
+                "type":"h3",
+                "text":"demo parametre h3 test"
+            },
+            {
+                "type":"h4",
+                "text":"demo parametre h4 test"
+            },
+            {
+                "type":"h5",
+                "text":"demo parametre h5 test"
+            },
+            {
+                "type":"h6",
+                "text":"demo parametre h6 test"
+            },
+            {
+                "type":"p",
+                "text":"demo parametre p test"
+            },
+            {
+                "type":"span",
+                "text":"demo parametre span test"
+            },            
+            {
+                "type":"hr"
+            },
+	{
+		"type":"submenu",
+		"text":"demo parametre",
+		"content":[
+			{
+				"type":"button",
+				"onClick":"function",
+				"text":"demo button"
+			},
+			{
+				"type":"input",
+				"inputType":"number",
+				"onKeydown":"function",
+				"placeholder":"input demo",
+				"max":2
+			},
+			{
+				"type":"label",
+				"text":"label demo"
+			},
+			{
+				"type":"div",
+				"content":[
+					{
+						"type":"label",
+						"text":"div demo"
+					},
+					{
+						"type":"input",
+						"inputType":"text",
+						"placeholder":"name",
+						"max":10
+					},
+					{
+						"type":"button",
+						"onClick":"function",
+						"text":"envoyer"
+					}
+				]
+			},
+            {
+                "type":"submenu",
+                "text":"demo parametre",
+                "content":[
+                    {
+                        "type":"button",
+                        "onClick":"function",
+                        "text":"demo button"
+                    },
+                    {
+                        "type":"input",
+                        "inputType":"number",
+                        "onKeydown":"function",
+                        "placeholder":"input demo",
+                        "max":2
+                    },
+                    {
+                        "type":"input",
+                        "inputType":"range",
+                        "onKeydown":"function",
+                        "placeholder":"input demo",
+                        "max":2
+                    },
+                    {
+                        "type":"input",
+                        "inputType":"color",
+                        "onKeydown":"function",
+                        "placeholder":"input demo",
+                        "max":2
+                    },
+                    {
+                        "type":"label",
+                        "text":"label demo"
+                    },
+                    {
+                        "type":"div",
+                        "content":[
+                            {
+                                "type":"label",
+                                "text":"div demo"
+                            },
+                            {
+                                "type":"input",
+                                "inputType":"text",
+                                "placeholder":"name",
+                                "max":10
+                            },
+                            {
+                                "type":"button",
+                                "onClick":"function",
+                                "text":"envoyer"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type":"button",
+                "text":"label demo"
+            }
+		]
+	},
+    {
+        "type":"label",
+        "text":"label demo"
+    }
+];
+
+        content.innerHTML = parseConfig( menu );
         lucide.createIcons();
-      </script>
+
+    </script>
 </body>
 </html>
